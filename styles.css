@@ -1,0 +1,666 @@
+/* ========================================
+   COLOR VARIABLES
+   ======================================== */
+
+:root {
+    /* Main Colors */
+    --bg-color: #2E2E2E;
+    --light-color: #D9D9D9;
+    --accent-color: #9F1010;
+
+    /* Background Color Intervals */
+    --bg-50: rgba(46, 46, 46, 0.5);
+    --bg-60: rgba(46, 46, 46, 0.6);
+    --bg-90: rgba(46, 46, 46, 0.9);
+
+    /* Light Color Intervals */
+    --light-50: rgba(217, 217, 217, 0.5);
+    --light-60: rgba(217, 217, 217, 0.6);
+    --light-90: rgba(217, 217, 217, 0.9);
+
+    /* Accent Color Intervals */
+    --accent-50: rgba(159, 16, 16, 0.5);
+    --accent-60: rgba(159, 16, 16, 0.6);
+    --accent-90: rgba(159, 16, 16, 0.9);
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--light-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container.background-dark {
+    position: fixed;
+    background: var(--bg-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    height: 120px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* For cheat sheet pages */
+.cheat-sheet-container {
+    margin-top: 120px;
+    background: var(--light-color);
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+h1 {
+    color: var(--light-color);
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: var(--light-90);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+p {
+    color: var(--light-60);
+    margin-bottom: 15px;
+}
+
+.item p.red {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn {
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-90);
+}
+
+.btn:active {
+    background-color: var(--accent-60);
+}
+
+.GoBackButton {
+    margin: 20px;
+}
+
+#GoBack {
+    background: var(--light-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+#GoBack:hover {
+    background: var(--light-90);
+}
+
+/* ========================================
+   UTILITY CLASSES FOR COLOR INTERVALS
+   ======================================== */
+
+/* Background intervals */
+.bg-50 { background-color: var(--bg-50); }
+.bg-60 { background-color: var(--bg-60); }
+.bg-90 { background-color: var(--bg-90); }
+
+/* Light intervals */
+.light-50 { color: var(--light-50); }
+.light-60 { color: var(--light-60); }
+.light-90 { color: var(--light-90); }
+
+/* Accent intervals */
+.accent-50 { color: var(--accent-50); }
+.accent-60 { color: var(--accent-60); }
+.accent-90 { color: var(--accent-90); }
+
+/* Background color utilities with intervals */
+.bg-light-50 { background-color: var(--light-50); }
+.bg-light-60 { background-color: var(--light-60); }
+.bg-light-90 { background-color: var(--light-90); }
+.bg-accent-50 { background-color: var(--accent-50); }
+.bg-accent-60 { background-color: var(--accent-60); }
+.bg-accent-90 { background-color: var(--accent-90); }
+
+.bg-primary { background-color: var(--bg-color); color: var(--light-color); }
+.bg-light { background-color: var(--light-color); }
+.bg-accent { background-color: var(--accent-color); color: var(--light-color); }
+.dark-text { color: var(--bg-color); }
+
+/* ========================================
+   GRID LAYOUT
+   ======================================== */
+
+.flex-container {
+    margin-top: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    gap: 20px;
+}
+
+.item {
+    width: calc(33.33% - 14px);
+    height: 200px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(159, 16, 16, 0.3);
+    background-color: var(--light-color);
+    border-color: var(--accent-color);
+}
+
+.item h3 {
+    color: var(--bg-color);
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.item p {
+    color: var(--bg-60);
+    font-size: 0.9em;
+}
+
+/* ========================================
+   LIGHTBOX STYLES
+   ======================================== */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    background-color: var(--light-color);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--bg-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--accent-color);
+}
+
+#lightbox-body {
+    color: var(--bg-color);
+}
+
+#lightbox-body h2 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#lightbox-body p {
+    color: var(--bg-color);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+#lightbox-body ul {
+    color: var(--bg-color);
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.color-box {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid var(--light-50);
+}
+
+/* ========================================
+   FIXED POSITIONING ELEMENTS
+   ======================================== */
+
+#top {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+#nav-hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+#nav-hamburger:hover {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   HAMBURGER MENU STYLES
+   ======================================== */
+
+.material-symbols-outlined.menu-icon {
+    font-size: 60px;
+    color: var(--light-color);
+    transition: color 0.3s ease;
+}
+
+#nav-hamburger:hover .menu-icon {
+    color: var(--accent-color);
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--bg-color);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 999;
+    padding-top: 100px;
+    overflow-y: auto;
+}
+
+.menu.open {
+    right: 0;
+}
+
+.menu a {
+    display: block;
+    color: var(--light-color);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.menu a:hover {
+    background-color: var(--accent-color);
+    border-left-color: var(--light-color);
+    padding-left: 40px;
+}
+
+/* Overlay for when menu is open */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 998;
+    pointer-events: none;
+    transition: background-color 0.4s ease;
+}
+
+.menu-overlay.active {
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: all;
+}
+
+/* ========================================
+   CUSTOM FONT FAMILIES
+   ======================================== */
+
+.bbh-bartle-regular {
+    font-family: "BBH Bartle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lato-thin { font-family: "Lato", sans-serif; font-weight: 100; font-style: normal; }
+.lato-light { font-family: "Lato", sans-serif; font-weight: 300; font-style: normal; }
+.lato-regular { font-family: "Lato", sans-serif; font-weight: 400; font-style: normal; }
+.lato-bold { font-family: "Lato", sans-serif; font-weight: 700; font-style: normal; }
+.lato-black { font-family: "Lato", sans-serif; font-weight: 900; font-style: normal; }
+.lato-thin-italic { font-family: "Lato", sans-serif; font-weight: 100; font-style: italic; }
+.lato-light-italic { font-family: "Lato", sans-serif; font-weight: 300; font-style: italic; }
+.lato-regular-italic { font-family: "Lato", sans-serif; font-weight: 400; font-style: italic; }
+.lato-bold-italic { font-family: "Lato", sans-serif; font-weight: 700; font-style: italic; }
+.lato-black-italic { font-family: "Lato", sans-serif; font-weight: 900; font-style: italic; }
+
+/* ========================================
+   CHEAT SHEET STYLES
+   ======================================== */
+
+header {
+    background: var(--bg-color);
+    color: var(--light-color);
+    padding: 30px;
+    text-align: center;
+}
+
+.search-box {
+    margin: 20px 30px;
+    position: relative;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+    background: white;
+    color: var(--bg-color);
+}
+
+#searchInput:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-50);
+}
+
+.content {
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 30px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section h2 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section h2:hover {
+    color: #7A0C0C;
+}
+
+.section-content {
+    margin-top: 15px;
+}
+
+.code-block {
+    background: var(--bg-color);
+    border-left: 4px solid var(--accent-color);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    overflow-x: auto;
+}
+
+.code-block code {
+    color: var(--light-color);
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent-color);
+    color: var(--light-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.copy-btn:hover {
+    background: #7A0C0C;
+}
+
+.tag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.tag-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.tag-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--accent-50);
+}
+
+.tag-name {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.tag-desc {
+    font-size: 14px;
+    color: var(--bg-color);
+}
+
+.hidden {
+    display: none;
+}
+
+.collapse-icon {
+    transition: transform 0.3s;
+}
+
+.collapsed .collapse-icon {
+    transform: rotate(-90deg);
+}
+
+.example {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: var(--bg-color);
+    font-size: 18px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .item {
+        width: calc(50% - 10px);
+    }
+
+    .menu {
+        width: 250px;
+        right: -250px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .material-symbols-outlined.menu-icon {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        width: 100%;
+    }
+
+    .menu {
+        width: 80%;
+        right: -80%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+.item.image1 {
+    background-image: url('images/soyokaze.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--bg-90);
+}
+
+.item.image2 {
+    background-image: url('images/Osu!_Logo_2016.svg.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--bg-90);
+}
+
+.item.image3 {
+    background-image: url('images/Osu!_Logo_2016.svg.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--bg-90);
+}
+
+.item.image4 {
+    background-image: url('images/Osu!_Logo_2016.svg.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--bg-90);
+}
+
+.item.image5 {
+    background-image: url('images/Osu!_Logo_2016.svg.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--bg-90);
+}
+
+.item.image6 {
+    background-image: url('images/Osu!_Logo_2016.svg.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--bg-90);
+}

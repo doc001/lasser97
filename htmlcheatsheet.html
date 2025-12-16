@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Cheat Sheet</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container background-dark">
+        <div id="top">
+            <h1 class="bbh-bartle-regular">DANIEL CUETO</h1>
+        </div>
+
+        <div id="nav-hamburger">
+            <span class="material-symbols-outlined menu-icon">
+                menu
+            </span>
+        </div>
+
+        <div class="menu" id="menu-links">
+            <a href="index.html">Home</a>
+            <a href="htmlcheatsheet.html">HTML Cheat Sheet</a>
+            <a href="csscheatsheet.html">CSS Cheat Sheet</a>
+        </div>
+    </div>
+
+    <div class="container cheat-sheet-container">
+
+        <div class="content" id="content">
+            <div class="section" data-category="structure">
+                <h2 onclick="toggleSection(this)">
+                    Document Structure
+                    <span class="collapse-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Content goes here
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" data-category="text">
+                <h2 onclick="toggleSection(this)">
+                    Text Content
+                    <span class="collapse-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="tag-grid">
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;h1&gt; - &lt;h6&gt;</div>
+                            <div class="tag-desc">Headings (h1 largest, h6 smallest)</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;p&gt;</div>
+                            <div class="tag-desc">Paragraph</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;strong&gt;</div>
+                            <div class="tag-desc">Bold text (important)</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;em&gt;</div>
+                            <div class="tag-desc">Italic text (emphasis)</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;br&gt;</div>
+                            <div class="tag-desc">Line break</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;hr&gt;</div>
+                            <div class="tag-desc">Horizontal rule</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" data-category="links">
+                <h2 onclick="toggleSection(this)">
+                    Links & Media
+                    <span class="collapse-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>&lt;a href="https://example.com"&gt;Link Text&lt;/a&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Open in New Tab&lt;/a&gt;
+&lt;img src="image.jpg" alt="Description"&gt;
+&lt;video src="video.mp4" controls&gt;&lt;/video&gt;
+&lt;audio src="audio.mp3" controls&gt;&lt;/audio&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" data-category="lists">
+                <h2 onclick="toggleSection(this)">
+                    Lists
+                    <span class="collapse-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>&lt;ul&gt;
+    &lt;li&gt;Unordered item&lt;/li&gt;
+    &lt;li&gt;Unordered item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Ordered item&lt;/li&gt;
+    &lt;li&gt;Ordered item&lt;/li&gt;
+&lt;/ol&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" data-category="forms">
+                <h2 onclick="toggleSection(this)">
+                    Forms & Input
+                    <span class="collapse-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>&lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    
+    &lt;input type="email" placeholder="Email"&gt;
+    &lt;input type="password" placeholder="Password"&gt;
+    &lt;input type="checkbox" id="check"&gt;
+    &lt;input type="radio" name="group"&gt;
+    
+    &lt;textarea rows="4"&gt;&lt;/textarea&gt;
+    
+    &lt;select&gt;
+        &lt;option&gt;Option 1&lt;/option&gt;
+        &lt;option&gt;Option 2&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" data-category="tables">
+                <h2 onclick="toggleSection(this)">
+                    Tables
+                    <span class="collapse-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Header 1&lt;/th&gt;
+            &lt;th&gt;Header 2&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Data 1&lt;/td&gt;
+            &lt;td&gt;Data 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" data-category="semantic">
+                <h2 onclick="toggleSection(this)">
+                    Semantic HTML5
+                    <span class="collapse-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="tag-grid">
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;header&gt;</div>
+                            <div class="tag-desc">Header section</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;nav&gt;</div>
+                            <div class="tag-desc">Navigation links</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;main&gt;</div>
+                            <div class="tag-desc">Main content</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;article&gt;</div>
+                            <div class="tag-desc">Independent content</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;section&gt;</div>
+                            <div class="tag-desc">Thematic grouping</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;aside&gt;</div>
+                            <div class="tag-desc">Sidebar content</div>
+                        </div>
+                        <div class="tag-item">
+                            <div class="tag-name">&lt;footer&gt;</div>
+                            <div class="tag-desc">Footer section</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" data-category="meta">
+                <h2 onclick="toggleSection(this)">
+                    Meta Tags
+                    <span class="collapse-icon">▼</span>
+                </h2>
+                <div class="section-content">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Page description"&gt;
+&lt;meta name="keywords" content="keyword1, keyword2"&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script src="javascript.js"></script>   
+</body>
+</html>
